@@ -1,4 +1,4 @@
-package Sword.Offer;
+package Sword.Offer.ten;
 
 /**
  * Created by asus on 2017/3/16.
@@ -14,22 +14,18 @@ public class Three {
 
     }
     public static boolean Find(int target, int [][] array) {
-        int  Row = array.length-1;
-        int Columm = array[0].length-1;
-
-
-        //while (Row>0&& Columm>0) {
+        int  Row = array.length-1;                  //行
+        int Columm = array[0].length-1;             //列
 
         for (int a = Columm; a >= 0; a--) {
-                if (target >= array[0][a]) {
+                if (target >= array[0][a]) {        //筛选列
                     for (int b = 0; b<=Row;b++)
                     {
-                        if (target==array[b][a])
+                        if (target==array[b][a])    //筛选行
                             return true;
                     }
                 }
             }
-       // }
         return  false;
     }
 }

@@ -17,7 +17,6 @@ public class Two {
             a--;
         }
         System.out.println(two(string));
-
     }
     public  static  int two(String [] strings)
     {
@@ -25,31 +24,36 @@ public class Two {
         int myarray[][] = new int[500][500];
         for ( int i = 0 ;i<strings.length;i++)
         {
-
             char a[]=strings[i].toCharArray();
             for (int j = 0 ; j<a.length;j++)
             {
                     myarray[i][a[j]]++;
             }
         }
-        for (int i=0;i<strings.length;i++)
+//        for (int i=0;i<strings.length;i++)                      //
+//        {
+//
+//            boolean flag = false;
+//            for (int j = i ; j <strings.length;j++)
+//            {
+//                for (int x=0;x<myarray[0].length;x++)
+//                {
+//                    if (myarray[i][x]!=myarray[j][x]&&flag==false)
+//                    {
+//                        b++;
+//                        flag=true;
+//                    }
+//                }
+//            }
+//        }
+//
+
+        for (int i = 0 ; i <strings.length;i++)
         {
-            boolean flag = false;
-            for (int j = i ; j <strings.length;j++)
-            {
 
-                for (int x=0;x<myarray[0].length;x++)
-                {
-                    if (myarray[i][x]!=myarray[j][x]&&flag==false)
-                    {
-                        b++;
-                        flag=true;
-                    }
-                }
-
-
-            }
         }
         return b;
     }
+
+
 }

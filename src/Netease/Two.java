@@ -54,13 +54,24 @@ public class Two {
         char[] c =a.toCharArray();
         int left=0,left1=0;
         int right=0,right1=0;
+        /*
+        比如说GGGBG
+        下面是将B放在前面，然后我们不用排序，因为B前面有3个G
+        所以就需要向前三次
+         */
         for (int i =0;i<c.length;i++)
         {
             if (c[i]=='G')
-                left++;
-            else
-                left1+=left;
+                left++;             //记录前面有多少个G
+            else                    //出现了B，那么将这个B转移到前面就需要
+                left1+=left;        //这么多次操作
         }
+
+//        类似的；
+//        比如说BGBGBG;
+//        第一个G前面有一个B，移动一次
+//        第二个G前面有两个B，就需要移动两次
+
         for (int i =0;i<c.length;i++)
         {
             if (c[i]=='B')
@@ -68,7 +79,7 @@ public class Two {
             else
                 right1+=right;
         }
-        return left1>right1?right1:left1;
+        return left1>right1?right1:left1; //比较一下那种移动次数少，就返回喽
 
     }
 }

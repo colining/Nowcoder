@@ -12,7 +12,11 @@ public class Main {
 //        System.out.println(a + h);
 //        short i =5;
 //        System.out.println(i + h);
-        byte [] src={(byte) 5},dst;
+        //byte [] src={(byte) 5},dst;
+        for (int i =0 ; i<10;++i)
+        {
+            System.out.println(i);
+        }
 
     }
 }

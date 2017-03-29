@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Created by asus on 2017/3/27.
  */
-public class Quicksort {
+ public class Quicksort {
     public  static  void  main(String [] arg)
     {
         int a[] = {4,3,5,8,2,5,0,9};

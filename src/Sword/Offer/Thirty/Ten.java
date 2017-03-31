@@ -1,5 +1,7 @@
 package Sword.Offer.Thirty;
 
+import Myjar.MinHeap;
+
 import java.util.ArrayList;
 import java.util.TreeSet;
 
@@ -15,7 +17,7 @@ public class Ten {
         ArrayList arrayList =new ArrayList();
        arrayList= (GetLeastNumbers_Solution1(n,4));
       arrayList=  GetLeastNumbers_Solution1(n1,10);
-      arrayList=  GetLeastNumbers_Solution1(n2,4);
+      arrayList=  GetLeastNumbers_Solution2(n2,4);
         System.out.println("allla");
     }
     static public ArrayList<Integer> GetLeastNumbers_Solution1(int [] input, int k)
@@ -37,7 +39,6 @@ public class Ten {
         ArrayList arrayList= new ArrayList();
         if (input==null||k<=0||k>input.length||input.length<=0)
                 return arrayList;
-
         int left = 0;
         int right = input.length-1;
         int index =AdujustArray(input,left,right);
@@ -83,5 +84,56 @@ public class Ten {
         }
         array[i]=x;
         return i;
+    }
+    static public ArrayList<Integer> GetLeastNumbers_Solution2(int [] input, int k)
+    {
+        ArrayList arrayList= new ArrayList();
+        if (input==null||k<=0||k>input.length||input.length<=0)
+            return arrayList;
+        int [] array = BuildMaXHeap(input);
+        for (int i = array.length-1;i>array.length-1-k;i--)
+        {
+            int temp = array[0];
+            array[0]=array[i];
+            array[i]= temp;
+            arrayList.add(temp);
+            AdjustMaxHeap(array,0,i);
+        }
+        return  arrayList;
+
+    }
+    static   public  int [] BuildMaXHeap(int []array)
+    {
+        /*
+        大根堆如果从一开始计数，ki就是k2i,k(2i+1)的父节点；
+        但是数组是从零计数的，个数就是数组长度，父节点下标就是/2再减去一；
+         */
+        for (int i=(array.length-2)/2;i>=0;i--)
+        {
+            AdjustMaxHeap(array,i,array.length);
+        }
+        return  array;
+    }
+    static    public void  AdjustMaxHeap(int []array , int k,int length)
+    {
+        int temp = array[k];                            //当前要调整的父节点
+        /*
+         j是他的子节点，如果继续循环，说明当前节点已经向下移动了了一层
+         */
+        for (int j=2*k+1;j<length-1;j=2*k+1)
+        {
+            if (j<length&&array[j]>array[j+1])            //如果右节点比左节点大，就变化下标
+            {
+                j++;
+            }
+            if (temp<=array[j])                                 //父节点大于当前子节点的最大值，说明这个父节点为首的大根堆没有问题
+                break;
+            else {
+                array[k] = array[j];
+                k = j;                    //记录父节点更换到的位置，继续下一次的循环
+            }
+        }
+        array[k]= temp;                   //父节点可能会有多次移动，所以最后一次移动结束。再赋值
+
     }
 }

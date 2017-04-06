@@ -1,47 +1,41 @@
 package com.company;
 
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * Created by asus on 2017/3/19.
  */
-public class Test implements InterFaceTest{
-    public  static void  main(String []arg)
-    {
-//        Test("a","b","c","d");
-//        InterFaceTest interFaceTest= new Test();
-//        interFaceTest.b();
-//        int a = 5;
-//        int b = 3;
-//        String s = "l";
-//        System.out.println(a+s+b);  //513
-//        System.out.println(a+b+s);  //81  先做a+b，然后再转型
-//        String str1="a";
-//        String str2 = str1+"b";
-//        String str3 = "ab";
-//        System.out.println(str2 == str3); //输出false
-//        StringBuffer s =  new StringBuffer("aba");
-//        StringBuffer s1 = new StringBuffer("aba");
-//        StringBuilder s2 = new StringBuilder("ccc");
-//        StringBuilder s3 = new StringBuilder("ccc");
-//        System.out.println(s.equals(s1));
-//        System.out.println(s2.equals(s3));
-//        ArrayList<Integer> arrayList = new ArrayList<>(5);
-//        arrayList.ensureCapacity(100);
-        Map<Integer, Integer> map = Collections.singletonMap(1, 1);
-        System.out.println(map.size());
+enum Account
+{
+    Saving,fixed,current,LA;
 
+    Account() {
+        System.out.println("lalla");
     }
-  static   public  void  Test(String... vlaue)
-    {
-        for (int i = 0; i < vlaue.length; i++) {
-            System.out.println(vlaue[i]);
+}
+public class Test {
+
+        public static void  main(String []arg)
+        {
+            //System.out.println(Account.fixed);
+//            System.out.println(Math.round(11.49));
+//            System.out.println(Math.ceil(-0.5));
+//            System.out.println(Math.floor(-0.5));
+//            int i = 1;
+//            int j = 1;
+//            boolean a=true?false:++i==2?false:true;
+//            System.out.println("a:"+a+", i:"+i);
+//            boolean b=false?true:++j==2?false:true;
+//            System.out.println("b:"+b+", j:"+j);
+//            boolean c = false?false:true;
+//            System.out.println(c);
+//            Object o = new Object();
+            int [] a = {2,5,63,3,5};
+            ArrayList arrayList = new ArrayList();
+            for (int i = 0; i < a.length; i++) {
+                arrayList.add(a[i]);
+                System.out.println(arrayList.get(0));
+            }
         }
-    }
-
-    @Override
-    public void a() {
-
-    }
 
 }

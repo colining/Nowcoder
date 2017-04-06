@@ -3,6 +3,7 @@ package com.company;
 /**
  * Created by asus on 2017/4/3.
  */
+
 public interface InterFaceTest {
         void  a();
         default void  b()
@@ -13,4 +14,7 @@ public interface InterFaceTest {
         {
 
         }
+
+        int c=0;
+
 }

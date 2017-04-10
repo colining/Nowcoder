@@ -9,7 +9,7 @@ public  class MySemaphore {
         this.value = v;
     }
     public synchronized void p(){           //加锁的，实现原子性，p操作等待
-        value = value-1;
+        value = value-1;                    //p操作对资源来说，少了一个锁
         if(value<0){
             try {
                 wait();

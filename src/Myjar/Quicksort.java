@@ -14,27 +14,27 @@ import java.util.Arrays;
 
     public  static  int AdujustArray(int array[], int left , int right)
    {
-       int i =left;
-        int j= right;
-        int x = array[left];
-       while (i<j)
+       int left1 =left;
+        int right1= right;
+        int key = array[left];
+       while (left1<right1)
        {
-           while (array[j]>=x&&i<j)
-           j--;
-           if (i<j) {
-               array[i] = array[j];
-               i++;
+           while (array[right1]>=key&&left1<right1)
+           right1--;
+           if (left1<right1) {
+               array[left1] = array[right1];
+               left1++;
            }
 
-           while (array[i]<x&&i<j)
-           i++;
-           if (i<j) {
-               array[j] = array[i];
-               j--;
+           while (array[left1]<key&&left1<right1)
+           left1++;
+           if (left1<right1) {
+               array[right1] = array[left1];
+               right1--;
            }
        }
-       array[i]=x;
-        return i;
+       array[left1]=key;
+        return left1;
    }
     public  static  int [] quick_sort1(int s[] , int l,int r)
     {

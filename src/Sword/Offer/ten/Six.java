@@ -54,7 +54,6 @@ public class Six {
                 treeNode1.left = test(leftpre,left);
 
             }
-
             if (flag!=pre.length-1) {
                 int right[] = new int[pre.length-flag-1];
                 System.arraycopy(in, flag+1,right, 0, in.length-(flag+1));
@@ -66,5 +65,4 @@ public class Six {
             }
             return treeNode1;
         }
-
 }

@@ -36,7 +36,7 @@ public class Two {
             PrintTm(number,length,index+1);
         }
     }
-  static   void  PrintNumber(char [] number)
+    static   void  PrintNumber(char [] number)
     {
         boolean isBegin0 = true;
         for (int i = 0 ; i <number.length; ++i)

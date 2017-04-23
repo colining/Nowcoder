@@ -11,9 +11,8 @@ class Test1 {
 }
 class MyApplication {
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        Test1 test=null;
-        test.hello();
+        int a = 5;
+        System.out.println(1 <<--a);
 
     }
 }

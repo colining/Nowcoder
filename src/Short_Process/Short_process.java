@@ -29,7 +29,6 @@ public class Short_process {
             arrayList.add(process);
             //System.out.println("----------------------------");
         }
-
         test(arrayList);
     }
 
@@ -111,7 +110,6 @@ public class Short_process {
             sumTurnaround_time_withwight+=Turnaround_time_withwight;
             System.out.println(Turnaround_time_withwight);
             System.out.println("----------------------------------------------");
-
         }
         System.out.println("先后顺序为：");
         for (int i = 0; i < arrayList1.size(); i++) {
@@ -122,6 +120,5 @@ public class Short_process {
         System.out.println(sumTurnaround_time / numofprocess);
         System.out.println("这组进程的平均带权周转时间为");
         System.out.println(sumTurnaround_time_withwight / numofprocess);
-
     }
 }

@@ -3,54 +3,48 @@ package Sword.Offer.Sixty;
 import Myjar.TreeNode;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Queue;
 
 /**
- * Created by asus on 2017/5/4.
+ * Created by asus on 2017/5/6.
  */
 public class Ten {
     public static void main(String[] args) {
-
+        TreeNode node = new TreeNode(5);
+        node.right = new TreeNode(60);
+        node.left = new TreeNode(70);
+        node.left.left = new TreeNode(6);
+        Print(node);
     }
-    public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
+    public static ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> arrayLists = new ArrayList<>();
-        if ( pRoot ==null)
-            return  arrayLists;
         ArrayList<Integer> arrayList = new ArrayList<>();
-        LinkedList<TreeNode> linkedlist = new LinkedList();
-        linkedlist.add(null);
-        linkedlist.add(pRoot);
-        boolean leftToright = true;
-        while (linkedlist.size()!=1)
+        if (pRoot == null)
+            return arrayLists;
+        Queue<TreeNode> queue =new LinkedList<>();
+        queue.add(pRoot);
+        int nextlevel = 0;
+        int changeline = 1;
+        while (queue.size()>0)
         {
-            TreeNode node = linkedlist.removeFirst();
-            if (node == null) {
-                Iterator<TreeNode> iterator = null;
-                if (leftToright)
-                {
-                    iterator = linkedlist.iterator();
-                }
-                else
-                    iterator = linkedlist.descendingIterator();
-                leftToright = !leftToright;
-                while (iterator.hasNext())
-                {
-                    TreeNode temp = iterator.next();
-                    arrayList.add(temp.val);
-                }
-                arrayLists.add(new ArrayList<Integer>(arrayList));
+            TreeNode node = queue.poll();
+            arrayList.add(node.val);
+            if (node.left != null) {
+                queue.add(node.left);
+                nextlevel++;
+            }
+            if (node.right != null) {
+                queue.add(node.right);
+                nextlevel++;
+            }
+            changeline--;
+            if (changeline==0)
+            {
+                arrayLists.add(new ArrayList<>(arrayList));
                 arrayList.clear();
-                linkedlist.addLast(null);
-                continue;
-            }
-            if (node.left != null)
-            {
-                linkedlist.addLast(node.left);
-            }
-            if (node.right != null)
-            {
-                linkedlist.addLast(node.right);
+                changeline = nextlevel;
+                nextlevel = 0;
             }
         }
         return arrayLists;

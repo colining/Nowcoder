@@ -1,23 +1,16 @@
 package NowCoder;
 
+import java.util.Arrays;
+
 /**
- * Created by colin on 2017/5/19.
+ * Created by colin on 2017/5/20.
  */
 public class Test {
-    static Test test = new Test();
-
-    static {
-        testa();
-        System.out.println("静态代码块");
-    }
-    static void testa(){
-        System.out.println("testa");
-    }
-    {
-        System.out.println("非静态");
-    }
-
     public static void main(String[] args) {
-        Test.testa();
+        System.out.println(Arrays.asList(args));
+        String s = "com.".replaceAll("\\.","/")+"asfafa";
+        System.out.println(s);
+        System.out.println('a' % 3);
+
     }
 }

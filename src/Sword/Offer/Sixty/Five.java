@@ -15,7 +15,7 @@ public class Five {
         hash[ch]++;
         s.append(ch);
     }
-    //return the first appearence once char in current stringstream
+    //return the First appearence once char in current stringstream
     public char FirstAppearingOnce()
     {
 

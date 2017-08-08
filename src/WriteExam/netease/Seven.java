@@ -1,7 +1,5 @@
 package WriteExam.netease;
 
-import com.sun.deploy.resources.Deployment_pt_BR;
-
 import java.util.Arrays;
 import java.util.Scanner;
 

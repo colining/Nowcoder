@@ -9,7 +9,17 @@ public class Six {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
-        System.out.println(fun1(num));
+//        System.out.println(fun1(num));
+        System.out.println(func2(num));
+    }
+
+    private static long func2(int num) {
+        long result = 0;
+        for (int i = num; i > 0 ; i /= 2) {
+            long temp = (i + 1) / 2;
+            result += temp * temp;
+        }
+        return result;
     }
 
     private static long fun1(int num) {

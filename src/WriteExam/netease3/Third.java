@@ -10,18 +10,12 @@ public class Third {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         HashSet<String> set = new HashSet<>();
-        while (true) {
-            String a = scanner.nextLine();
-            if (a.length() == 0) {
-                System.out.println(set.size());
-                set = new HashSet<>();
-                continue;
-            }
-            String[] aa = a.split(" ");
-            for (int i = 0; i < aa.length; i++) {
-                    set.add(aa[i]);
-            }
+        while (scanner.hasNext()) {
+            set.add(scanner.next());
         }
+        System.out.println(set.size());
+        String a = "aaa";
+
 
     }
 }

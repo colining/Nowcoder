@@ -20,13 +20,13 @@ public class First {
         }
     }
 
+    /*
+
+     */
     private static void func1(int n, int[] energy, int K, int d) {
-        //以选择第k个数时，以n结尾时的最大值
+        //选择第k个数时，以n结尾时的最大值
         long[][] fMax = new long[K + 1][n + 1];
-
         long[][] fMin = new long[K + 1][n + 1];
-
-
         //以某个位置结尾，以此计算当他作为第k个数选择时的最大值
         long res = Integer.MIN_VALUE;
         for (int i = 1; i <= n; i++) {

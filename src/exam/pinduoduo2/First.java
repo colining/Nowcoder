@@ -57,12 +57,4 @@ public class First {
         return Math.max(sum, sum2);
     }
 
-    private static int fun2(int[] array){
-        int big1 = 0;
-        int big2 = 0;
-        int big3 =0;
-
-        int small;
-        return 0;
-    }
 }

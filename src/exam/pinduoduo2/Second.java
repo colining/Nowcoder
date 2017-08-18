@@ -1,7 +1,6 @@
 package exam.pinduoduo2;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
-
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -12,7 +11,29 @@ public class Second {
         Scanner scanner = new Scanner(System.in);
         String a = scanner.nextLine();
         String str[] = a.split(" ");
-        System.out.println(fun1(str[0], str[1]));
+//        System.out.println(fun1(str[0], str[1]));
+        func2(str[0], str[1]);
+    }
+
+    private static void func2(String s, String s1) {
+        int[] res = new int[s.length() + s1.length()];
+        for (int i = s.length()-1; i >= 0 ; i--) {
+            int a = s.charAt(i) - '0';
+            for (int j = s1.length()-1; j>= 0; j--) {
+                int b = s1.charAt(j) - '0';
+                res[i + j] += (res[i + j + 1] + a * b) / 10;
+                res[i + j + 1] = (res[i + j + 1] + a * b) % 10;
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        boolean flag = false;
+        for (int i = 0; i < res.length; i++) {
+            if (res[i]!= 0)
+                flag = true;
+            if (flag)
+            sb.append(res[i]);
+        }
+        System.out.println(sb);
     }
 
     private static String fun1(String a, String b) {

@@ -62,7 +62,7 @@ public class First {
 }
 
 
-// class Main {
+// class First {
 //
 //    public static class Score {
 //        int a;

@@ -1,4 +1,4 @@
-package exam.nowcoder;
+package exam.nowcoder1;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package exam.NowCoder5_19;
+package exam.nowcoder3;
 
 import java.util.Scanner;
 

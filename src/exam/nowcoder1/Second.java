@@ -1,5 +1,7 @@
 package exam.nowcoder1;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -61,6 +63,7 @@ public class Second {
     private static String change(String s1, int i) {
         String a = s1.substring(i, s1.length()) + s1.substring(0, i);
         return s1.substring(i, s1.length()) + s1.substring(0, i);
+
     }
 
 }
